@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "outDir": "dist",
+      "module": "ESNext",
+      "target": "ESNext",
+      "declaration": true,
+      "declarationMap": true,
+      "strict": true,
+      "moduleResolution": "Node",
+      "jsx": "react-jsx"
+    },
+    "include": ["src"]
+  }
