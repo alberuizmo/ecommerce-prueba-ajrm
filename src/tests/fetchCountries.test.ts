@@ -1,5 +1,5 @@
 import { fetchCountries } from "../services/countryService";
-import { vi } from "vitest";
+import { vi } from 'vitest';
 
 global.fetch = vi.fn();
 
@@ -15,12 +15,12 @@ describe("fetchCountries", () => {
       { name: { common: "Brasil" } }
     ];
 
-    (fetch as jest.Mock).mockResolvedValue({
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
       ok: true,
       json: async () => mockData,
-    });
+    }));
 
-    const result = await fetchCountries();
+    const result = await fetchCountries(); 
     
     expect(result).toEqual(["Argentina", "Brasil", "México"]);
     expect(fetch).toHaveBeenCalledTimes(1);
@@ -28,9 +28,9 @@ describe("fetchCountries", () => {
   });
 
   test("Devuelve un array vacío si la API responde con error", async () => {
-    (fetch as jest.Mock).mockResolvedValue({
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
       ok: false,
-    });
+    }));    
 
     const result = await fetchCountries();
     
@@ -38,8 +38,9 @@ describe("fetchCountries", () => {
     expect(fetch).toHaveBeenCalledTimes(1);
   });
 
-  test("Devuelve un array vacío si ocurre un error en la petición", async () => {
-    (fetch as jest.Mock).mockRejectedValue(new Error("Network error"));
+  test("Devuelve un array vacío si ocurre un error en la petición", async () => {    
+
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("Network error")));
 
     const result = await fetchCountries();
     
