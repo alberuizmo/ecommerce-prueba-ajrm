@@ -20,10 +20,9 @@ const Toast: FC<ToastProps> = ({ message, type = "success", onClose }) => {
 
   return visible ? (
     <div      
-      className={`fixed top-20 right-5 px-4 py-2 rounded-lg shadow-lg text-white text-md transition-opacity duration-400 ${
-        type === "success" ? "bg-green-500" : "bg-red-500"
+      className={`custom-toast ${
+        type === "success" ? "bg-success" : "bg-error"
       }`}
-      style={{ zIndex: 999 }}
     >
       {message}
     </div>
