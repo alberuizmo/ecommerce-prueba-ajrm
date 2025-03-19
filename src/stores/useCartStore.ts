@@ -37,7 +37,7 @@ const useCartStore = create<CartState>()(
       },
     }),
     {
-      name: "cart-storage", // Clave para persistencia en localStorage
+      name: "cart-storage",
     },
   ),
 );

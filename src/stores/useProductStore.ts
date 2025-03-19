@@ -19,7 +19,6 @@ const mockData: Product[] = [
   { id: 15, name: "Sandía", category: "Tropicales", stock: 10, price: 9000, tax: 0.19 }
 ];
 
-// Guardar los productos en localStorage si no existen
 const storedProducts = localStorage.getItem("products");
 
 if (!storedProducts) {

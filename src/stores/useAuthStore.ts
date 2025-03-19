@@ -2,7 +2,6 @@ import { create } from "zustand";
 import { AuthState } from "../types/Index";
 import useCartStore from "./useCartStore";
 
-// Función para obtener el usuario almacenado en localStorage
 const getStoredUser = () => {
   try {
     const storedUser = localStorage.getItem("user");

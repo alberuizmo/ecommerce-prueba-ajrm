@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import useCartStore from "../stores/useCartStore";
 import { useAuthStore } from "../stores/useAuthStore";
 import { ProductCardProps } from "../types/Index";
+import { formatPrice } from "ecommerce-utils-ajrm";
 
 const ProductCard: React.FC<ProductCardProps> = ({
   id,
@@ -37,9 +38,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="flex-grow">
         <h3 className="text-lg font-semibold text-pink-700">{name}</h3>
         <p className="text-sm text-gray-500">📂 {category}</p>
-        <p className="text-gray-600 text-sm">Precio: ${price.toFixed(2)}</p>
+        <p className="text-gray-600 text-sm">Precio: {formatPrice(price)}</p>
         <p className="text-gray-700 font-semibold">
-          Total (c/ impuesto): ${totalPrice.toFixed(2)}
+          Total (c/ impuesto): {formatPrice(totalPrice)}
         </p>
         <p
           className={`text-sm ${stock > 0 ? "text-green-600" : "text-red-500"}`}

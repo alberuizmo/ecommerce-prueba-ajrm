@@ -1,7 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import CartItem from "../components/CartItem";
 
-// Configuración general de la story
 export default {
   title: "Ecommerce/CartItem",
   component: CartItem,
@@ -11,7 +10,6 @@ export default {
   },
 } as Meta<typeof CartItem>;
 
-// Template base para las variantes
 const Template: StoryFn<typeof CartItem> = (args) => <CartItem {...args} />;
 
 // Variante: Producto normal

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Toast from "../components/Toast"; // Ajusta la ruta según la estructura de tu proyecto
+import Toast from "../components/Toast";
 
 const meta: Meta<typeof Toast> = {
   title: "Components/Toast",

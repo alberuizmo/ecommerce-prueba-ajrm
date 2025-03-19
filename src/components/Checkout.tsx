@@ -4,7 +4,7 @@ import { useAuthStore } from "../stores/useAuthStore";
 import { fetchCountries } from "../services/countryService";
 import useProductStore from "../stores/useProductStore";
 import { BillingInfo, Invoice } from "../types/Index";
-import { useToast } from "../context/useToast";
+import { useToast } from "ecommerce-utils-ajrm";
 
 const Checkout: React.FC = () => {
   const { showToast } = useToast();

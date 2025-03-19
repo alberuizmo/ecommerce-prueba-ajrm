@@ -29,15 +29,12 @@ const Cart: React.FC = () => {
 
       {cart.length > 0 && (
         <div className="mt-4 flex flex-col gap-3">
-          {/* Botón para ir a Checkout */}
           <button
             onClick={() => navigate("/checkout")}
             className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg transition hover:bg-blue-600"
           >
             Ir a Checkout 🛒
           </button>
-
-          {/* Botón para vaciar carrito */}
           <button
             onClick={clearCart}
             className="w-full bg-red-500 text-white font-semibold py-2 rounded-lg transition hover:bg-red-600"

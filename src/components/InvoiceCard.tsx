@@ -1,6 +1,6 @@
 import React from "react";
 import { InvoiceCardProps, InvoiceRow } from "../types/Index";
-import { formatPrice } from "../utils/utilsEcommerce";
+import { formatPrice } from "ecommerce-utils-ajrm";
 
 const InvoiceRowItem: React.FC<InvoiceRow> = (item) => {
   return (

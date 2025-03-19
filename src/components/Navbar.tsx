@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
         <ul className="flex space-x-6">
           {user?.role === "client" && (
             <li>
-              <Link to="/cart" className="hover:text-pink-600 transition">
+              <Link to="/cart" className="hover:text-pink-600 transition lg:hidden">
                 🛍️ Ver Carrito
               </Link>
             </li>

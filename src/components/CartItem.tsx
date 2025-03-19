@@ -1,5 +1,5 @@
 import { CartItemProps } from "../types/Index";
-import { formatPrice, totalWithTax } from "../utils/utilsEcommerce";
+import { formatPrice, totalWithTax } from "ecommerce-utils-ajrm";
 
 const CartItem: React.FC<CartItemProps> = ({
   id,
