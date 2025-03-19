@@ -1,10 +1,9 @@
+import { API_BASE_URL } from "../config/constants";
 import { Country } from "../types/Index";
-
-const API_URL = "https://restcountries.com/v3.1/region/america";
 
 export const fetchCountries = async (): Promise<string[]> => {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(API_BASE_URL);
     if (!response.ok) throw new Error("Error al obtener la lista de países");
     const data = await response.json();
     return data.map((country: Country) => country.name.common).sort();

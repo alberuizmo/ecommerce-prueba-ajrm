@@ -20,6 +20,11 @@ export interface ICartItem {
   tax: number;
 }
 
+export interface CartItemProps extends ICartItem {
+  updateQuantity: (id: number, quantity: number) => void;
+  removeFromCart: (id: number) => void;
+}
+
 export interface CartState {
   cart: ICartItem[];
   addToCart: (item: ICartItem) => void;
@@ -59,26 +64,33 @@ export interface ProductCardProps {
 }
 
 export interface PrivateRouteProps {
-    allowedRoles: string[];
-  }
+  allowedRoles: string[];
+}
 
-  export interface Invoice {
-    id: number;
-    user: string;
-    items: {
-      id: number;
-      name: string;
-      quantity: number;
-      price: number;
-      tax: number;
-    }[];
-    total: number;
-    billingInfo: BillingInfo;
-    date: string;
-  }
+export interface InvoiceRow {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
+  tax: number;
+}
 
-  export interface BillingInfo {
-    name: string;
-    email: string;
-    country: string;
-  }
+
+export interface Invoice {
+  id: number;
+  user: string;
+  items: InvoiceRow[];
+  total: number;
+  billingInfo: BillingInfo;
+  date: string;
+}
+
+export interface BillingInfo {
+  name: string;
+  email: string;
+  country: string;
+}
+
+export interface InvoiceCardProps {
+  invoice: Invoice;
+}

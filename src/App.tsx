@@ -16,21 +16,18 @@ const App: React.FC = () => {
           <Navbar />
           <main className="flex-grow container mx-auto px-4 py-6">
             <Routes>
-              {/* Rutas accesibles para todos */}
+
               <Route path="/" element={<ProductList />} />
 
-              {/* Rutas solo para clientes */}
               <Route element={<PrivateRoute allowedRoles={["client"]} />}>
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
               </Route>
 
-              {/* Rutas solo para administradores */}
               <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
                 <Route path="/invoices" element={<InvoicesList />} />
               </Route>
 
-              {/* Redirigir cualquier otra ruta no permitida a "/" */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>

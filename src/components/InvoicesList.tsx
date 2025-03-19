@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthStore } from "../stores/useAuthStore";
 import { Invoice } from "../types/Index";
+import InvoiceCard from "./InvoiceCard";
 
 const InvoicesList: React.FC = () => {
   const { user } = useAuthStore();
@@ -30,38 +31,7 @@ const InvoicesList: React.FC = () => {
         ) : (
           <ul className="space-y-4">
             {invoices.map((invoice) => (
-              <li key={invoice.id} className="p-4 border rounded-lg bg-gray-50">
-                <h3 className="text-lg font-semibold text-gray-700">
-                  🛒 Pedido de {invoice.user} - {invoice.date}
-                </h3>
-                <p className="text-sm text-gray-500">
-                  📍 {invoice.billingInfo.country}
-                </p>
-                <p className="text-sm text-gray-500">
-                  📧 {invoice.billingInfo.email}
-                </p>
-
-                <ul className="mt-2 text-gray-700">
-                  {invoice.items.map((item) => (
-                    <li key={item.id} className="flex justify-between">
-                      <span>
-                        {item.name} (x{item.quantity})
-                      </span>
-                      <span>
-                        $
-                        {(
-                          item.price * item.quantity +
-                          item.tax * item.quantity
-                        ).toFixed(2)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="font-bold text-gray-900 mt-2">
-                  Total: ${invoice.total.toFixed(2)}
-                </p>
-              </li>
+              <InvoiceCard key={invoice.id} invoice={invoice} />
             ))}
           </ul>
         )}

@@ -14,7 +14,6 @@ const ProductList: React.FC = () => {
         🛒 Productos Disponibles
       </h2>
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row">
-        {/* Contenedor de productos */}
         <div className="flex-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
@@ -22,8 +21,6 @@ const ProductList: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Contenedor del carrito (solo para clientes) */}
         {user?.role === "client" && (
           <div className="hidden lg:block w-64 ml-6">
             <Cart />

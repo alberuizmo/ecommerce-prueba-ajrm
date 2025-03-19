@@ -32,13 +32,12 @@ const Checkout: React.FC = () => {
     setBillingInfo({ ...billingInfo, [e.target.name]: e.target.value });
   };
 
-  const { products, setProducts } = useProductStore(); // Obtenemos los productos y la función para actualizar
+  const { products, setProducts } = useProductStore();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (cart.length === 0) return;
 
-    // Crear la factura
     const newInvoice: Invoice = {
       id: Date.now(),
       user: user ? user.username : "Invitado",
@@ -52,7 +51,6 @@ const Checkout: React.FC = () => {
       date: new Date().toLocaleString(),
     };
 
-    // Actualizar el stock de productos
     const updatedProducts = products.map((product) => {
       const cartItem = cart.find((item) => item.id === product.id);
       return cartItem
@@ -60,10 +58,8 @@ const Checkout: React.FC = () => {
         : product;
     });
 
-    // Guardar cambios en localStorage y estado global
     setProducts(updatedProducts);
 
-    // Guardar la factura en localStorage
     const invoices = JSON.parse(localStorage.getItem("invoices") || "[]");
     invoices.push(newInvoice);
     localStorage.setItem("invoices", JSON.stringify(invoices));
@@ -137,7 +133,6 @@ const Checkout: React.FC = () => {
                 className="w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
               />
 
-              {/* Select de Países */}
               <select
                 name="country"
                 value={billingInfo.country}

@@ -7,7 +7,7 @@ export const ToastProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const showToast = (message: string, type: "success" | "error" = "success") => {
     setToast({ message, type });
-    setTimeout(() => setToast(null), 3000); // Oculta el toast después de 3s
+    setTimeout(() => setToast(null), 3000);
   };
 
   return (

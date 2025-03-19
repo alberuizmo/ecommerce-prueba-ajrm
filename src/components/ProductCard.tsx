@@ -34,7 +34,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div className={`bg-pink-100 border border-pink-300 p-4 rounded-xl shadow-md transition-transform transform hover:scale-105 flex flex-col justify-between ${user?.role === "client" && "min-h-[240px]"}`}>	
-      {/* Contenido del producto */}
       <div className="flex-grow">
         <h3 className="text-lg font-semibold text-pink-700">{name}</h3>
         <p className="text-sm text-gray-500">📂 {category}</p>
@@ -48,7 +47,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {stock > 0 ? `Stock: ${stock} disponibles` : "Agotado"}
         </p>
 
-        {/* Input para seleccionar cantidad o mensaje de carrito */}
         {!productIsInCart && user?.role === "client" && (
           <div className="flex items-center mt-2">
             <label className="text-gray-600 mr-2">Cantidad:</label>
@@ -65,7 +63,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </div>
 
-      {/* Botón */}
       {user?.role === "client" && (
         <button
           onClick={() => addToCart({ id, name, price, tax, quantity })}

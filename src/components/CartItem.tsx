@@ -1,21 +1,25 @@
-import useCartStore from "../stores/useCartStore";
-import { ICartItem } from "../types/Index";
+import { CartItemProps } from "../types/Index";
+import { formatPrice, totalWithTax } from "../utils/utilsEcommerce";
 
-const CartItem: React.FC<ICartItem> = ({ id, name, price, quantity, tax }) => {
-  const { updateQuantity, removeFromCart } = useCartStore();
-
-  // Calcula el precio total con impuestos
-  const totalWithTax = (price * (1 + tax)).toFixed(2);
+const CartItem: React.FC<CartItemProps> = ({
+  id,
+  name,
+  price,
+  quantity,
+  tax,
+  updateQuantity,
+  removeFromCart,
+}) => {
 
   return (
     <div className="flex justify-between items-center p-2 border-b">
       <div>
         <p className="font-semibold">{name}</p>
         <p className="text-sm text-gray-600">
-          Precio unitario: ${price.toFixed(2)}
+          Precio unitario: {formatPrice(price)}
         </p>
         <p className="text-sm text-gray-800 font-semibold">
-          Total (c/ impuesto): ${totalWithTax}
+          Total (c/ impuesto): {totalWithTax(price, tax, quantity)}
         </p>
       </div>
 

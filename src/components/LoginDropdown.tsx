@@ -10,7 +10,7 @@ const LoginDropdown: React.FC = () => {
   const handleLogin = () => {
     if (username.trim()) {
       login(username, role);
-      setIsOpen(false); // Cierra el dropdown después de iniciar sesión
+      setIsOpen(false);
     }
   };
 
@@ -34,7 +34,6 @@ const LoginDropdown: React.FC = () => {
           onMouseLeave={() => setIsOpen(false)}
         >
           {user ? (
-            // Si hay usuario logueado, mostrar info y botón de logout
             <div className="text-center">
               <p className="text-lg font-semibold text-gray-700">
                 {user.username}
@@ -48,7 +47,6 @@ const LoginDropdown: React.FC = () => {
               </button>
             </div>
           ) : (
-            // Formulario de login si no hay usuario
             <>
               <h2 className="text-lg font-semibold text-gray-700 text-center mb-3">
                 Iniciar Sesión
