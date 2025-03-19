@@ -1,44 +1,43 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-}
-
-interface CartState {
-  cart: CartItem[];
-  addToCart: (item: CartItem) => void;
-  removeFromCart: (id: number) => void;
-  clearCart: () => void;
-  total: number;
-}
+import { CartState } from "../types/Index";
 
 const useCartStore = create<CartState>()(
   persist(
     (set) => ({
       cart: [],
-      total: 0,
+
       addToCart: (item) => {
-        set((state) => ({ cart: [...state.cart, item] }));
-        set((state) => ({
-          total: state.cart.reduce((acc, item) => acc + item.price, 0),
-        }));
+        set((state) => {
+          return {
+            cart: [...state.cart, { ...item, quantity: item.quantity }]
+          };
+        });
       },
+
       removeFromCart: (id) => {
-        set((state) => ({ cart: state.cart.filter((item) => item.id !== id) }));
+        set((state) => {
+          const newCart = state.cart.filter((item) => item.id !== id);
+          return {
+            cart: newCart
+          };
+        });
+      },
+
+      updateQuantity: (id, quantity) => {
         set((state) => ({
-          total: state.cart.reduce((acc, item) => acc + item.price, 0),
+          cart: state.cart.map((item) =>
+            item.id === id ? { ...item, quantity } : item,
+          )
         }));
       },
+
       clearCart: () => {
-        set({ cart: [] });
-        set({ total: 0 });
+        set({ cart: [] });        
       },
     }),
     {
-      name: "cart-storage", // Clave para localStorage
+      name: "cart-storage", // Clave para persistencia en localStorage
     },
   ),
 );

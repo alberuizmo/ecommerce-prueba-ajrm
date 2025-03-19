@@ -1,13 +1,5 @@
 import { create } from "zustand";
-
-export interface Product {
-  id: number;
-  name: string;
-  category: string;
-  stock: number;
-  price: number;
-  tax: number;
-}
+import { Product, ProductStore } from "../types/Index";
 
 const mockData: Product[] = [
   { id: 1, name: "Manzana Roja", category: "Frutas Frescas", stock: 50, price: 2000, tax: 0.19 },
@@ -32,11 +24,6 @@ const storedProducts = localStorage.getItem("products");
 
 if (!storedProducts) {
   localStorage.setItem("products", JSON.stringify(mockData));
-}
-
-interface ProductStore {
-  products: Product[];
-  setProducts: (products: Product[]) => void;
 }
 
 const useProductStore = create<ProductStore>((set) => ({
