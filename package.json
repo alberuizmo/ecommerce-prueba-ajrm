@@ -9,6 +9,7 @@
     ]
   },
   "scripts": {
+    "release:ecommerce-utils": "pnpm --filter ecommerce-utils-ajrm release",
     "build:ecommerce-utils": "pnpm --filter ecommerce-utils-ajrm build",
     "dev:ecommerce-ajrm": "pnpm --filter ecommerce-ajrm dev",
     "build:ecommerce-ajrm": "pnpm --filter ecommerce-ajrm build",
