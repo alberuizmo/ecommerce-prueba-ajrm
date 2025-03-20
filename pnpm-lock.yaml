@@ -14,8 +14,8 @@ importers:
         specifier: ^4.0.14
         version: 4.0.14(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
       ecommerce-utils-ajrm:
-        specifier: ^1.0.11
-        version: 1.0.11(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
+        specifier: ^1.0.12
+        version: 1.0.12(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -1624,8 +1624,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  ecommerce-utils-ajrm@1.0.11:
-    resolution: {integrity: sha512-luZjtLOseFJt7G8L+U/0Dx3jyME0u3dg3GePuJ/aZgHkisKOmkJ5AFVNCSCJL9z53cWJ51ysXHrVN+7RkegZwg==}
+  ecommerce-utils-ajrm@1.0.12:
+    resolution: {integrity: sha512-3hdfnwfQa82dSs27Jq3GfOnpf0JN+mX58HAKtmoF4tRQlDCuDJhjuvSISDmGxSXJQfi/ZhYKBBpaf/wW786L5w==}
 
   electron-to-chromium@1.5.120:
     resolution: {integrity: sha512-oTUp3gfX1gZI+xfD2djr2rzQdHCwHzPQrrK0CD7WpTdF0nPdQ/INcRVjWgLdCT4a9W3jFObR9DAfsuyFQnI8CQ==}
@@ -4531,7 +4531,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  ecommerce-utils-ajrm@1.0.11(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)):
+  ecommerce-utils-ajrm@1.0.12(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)):
     dependencies:
       '@tailwindcss/cli': 4.0.14
       '@tailwindcss/vite': 4.0.14(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2))
