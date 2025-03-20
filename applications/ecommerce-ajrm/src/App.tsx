@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import InvoicesList from "./components/InvoicesList";
 import PrivateRoute from "./components/PrivateRoute";
 import { ToastProvider } from "ecommerce-utils-ajrm";
-import "ecommerce-utils-ajrm/dist/index.css";
+import "ecommerce-utils-ajrm/index.css";
 
 const App: React.FC = () => {
   return (
