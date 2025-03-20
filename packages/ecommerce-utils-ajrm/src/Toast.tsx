@@ -1,5 +1,5 @@
 import { useState, useEffect, FC } from "react";
-import styles from "./Toast.module.css";
+import "./index.css";
 
 interface ToastProps {
   message: string;
@@ -21,8 +21,8 @@ const Toast: FC<ToastProps> = ({ message, type = "success", onClose }) => {
 
   return visible ? (
     <div
-      className={`${styles.customToast} ${
-        type === "success" ? styles.bgSuccess : styles.bgError
+      className={`custom-toast ${
+        type === "success" ? "bg-success" : "bg-error"
       }`}
     >
       {message}
