@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      '@evilmartians/lefthook':
+        specifier: ^1.11.3
+        version: 1.11.3
 
   applications/ecommerce-ajrm:
     dependencies:

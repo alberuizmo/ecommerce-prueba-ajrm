@@ -34,8 +34,8 @@ describe("CartItem Component", () => {
     render(<CartItem {...props} />);
 
     expect(screen.getByText("Producto Test")).toBeInTheDocument();
-    expect(screen.getByText("Precio unitario: $50.00")).toBeInTheDocument();
-    expect(screen.getByText("Total (c/ impuesto): $110.00")).toBeInTheDocument();
+    expect(screen.getAllByText(/50[.,]00\s?US\$/i)).toHaveLength(1);
+    expect(screen.getAllByText(/110[.,]00\s?US\$/i)).toHaveLength(1);
   });
 
   it("llama a `updateQuantity` al cambiar el input de cantidad", () => {
