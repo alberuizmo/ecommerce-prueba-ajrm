@@ -76,7 +76,7 @@ El monorepo utiliza `pnpm workspaces` para administrar paquetes. A continuación
 
 La aplicación está desplegada en **AWS S3** a través de **GitHub Actions** con un flujo de CI/CD. Puedes acceder a ella en la siguiente URL:
 
-🔗 [Ecommerce AJRM](http://ecommerce-ajrm.s3-website.us-east-2.amazonaws.com)
+🔗 [Ecommerce AJRM](https://ecommerce-ajrm.s3.amazonaws.com/index.html)
 
 ## 🛠 Herramientas Utilizadas
 
