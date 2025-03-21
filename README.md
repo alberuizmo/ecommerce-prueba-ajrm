@@ -72,6 +72,12 @@ El monorepo utiliza `pnpm workspaces` para administrar paquetes. A continuación
   pnpm release:ecommerce-utils
   ```
 
+## 🌍 Despliegue
+
+La aplicación está desplegada en **AWS S3** a través de **GitHub Actions** con un flujo de CI/CD. Puedes acceder a ella en la siguiente URL:
+
+🔗 [Ecommerce AJRM](http://ecommerce-ajrm.s3-website.us-east-2.amazonaws.com)
+
 ## 🛠 Herramientas Utilizadas
 
 - **React** + **TypeScript** + **Vite**
@@ -81,6 +87,8 @@ El monorepo utiliza `pnpm workspaces` para administrar paquetes. A continuación
 - **Storybook** (documentación de componentes)
 - **PNPM** (gestión de paquetes)
 - **Lefthook** (gestión de hooks de git)
+- **AWS S3** (despliegue estático)
+- **GitHub Actions** (CI/CD)
 
 ## 📄 Licencia
 
