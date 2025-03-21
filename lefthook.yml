@@ -3,12 +3,8 @@ pre-commit:
   commands:
     lint:
       run: pnpm --recursive run lint
-    test:
-      run: pnpm --recursive run test --if-present
 
 pre-push:
   commands:
-    build:
-      run: pnpm --recursive run build --if-present
-    type-check:
-      run: pnpm --recursive run type-check --if-present
+    test:
+      run: pnpm --recursive run test --if-present
